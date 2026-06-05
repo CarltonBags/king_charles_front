@@ -10,6 +10,7 @@ Return ONLY a valid JSON object matching exactly this schema:
   "drink_type": string | null,
   "is_alcoholic": boolean,
   "max_abv": number,
+  "negative": string[],
   "flavor_profile": string[]
 }
 
@@ -25,6 +26,7 @@ Field descriptions:
   "gin"
   "whisky"
   "spirit"
+  "soft_drink"
   "special"
 
   If the customer does not specify a drink type, return null.
@@ -35,8 +37,15 @@ Field descriptions:
 
 - max_abv:
   If the customer specifies an ABV limit, use it.
+  If the user says he wants low or medium ABV, find a reasonable value dependent on the drink. A medium alcohol level in a beer is less than in a whisky.
   If the customer requests a non-alcoholic drink, use 0.5.
   Otherwise use 70.0.
+
+- negative: 
+  If a user for example does not like Whisky and explicitly states it, include it in the negative array.
+  For example a user might say: "I would like a malty drink but i do not like whisky", include it.
+  This is also true for flavors. A user might request: "I want a tropical drink but I do not like Mango".
+
 
 - flavor_profile:
   An array of flavor descriptors explicitly stated or strongly implied by the customer's request.
@@ -103,9 +112,11 @@ User:
 
 Output:
 {
-  "semantic_query": "smoky peaty whisky",
+  "semantic_query": "smoky whisky",
   "drink_type": "whisky",
   "is_alcoholic": true,
-  "max_abv": 70.0
+  "max_abv": 70.0,
+  "negative":["peaty"],
+  "flavor_profile": ["smoky", "earthy"]
 }
 `;

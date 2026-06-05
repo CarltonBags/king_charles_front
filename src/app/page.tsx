@@ -1,6 +1,6 @@
 "use client";
 
-import { submitPrefilter } from "./query";
+import { submitPrefilter, getDrinks } from "./query";
 import { useState, useRef, useEffect, SubmitEventHandler } from "react";
 import {
   Send,
@@ -102,12 +102,19 @@ export default function Home() {
     e.preventDefault();
     if (!input.trim() || isTyping) return;
 
+    let prefilter
+
     try{
-        const prefilter = await submitPrefilter(input.trim())
+        prefilter = await submitPrefilter(input.trim())
         console.log("prefilter result:", prefilter)
     }catch(e){
       console.log("error prefiltering", e)
     }
+
+    if (prefilter) {
+      getDrinks(prefilter)
+    }
+
 
   };
 

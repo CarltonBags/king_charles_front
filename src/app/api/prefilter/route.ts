@@ -41,7 +41,7 @@ export async function POST (req: Request) {
             throw new Error(`Deepseek returned malformed JSON: ${response.choices[0].message.content}`)
         }
 
-        console.log("response:",response.choices[0].message.content)
+        console.log("response in route:",response.choices[0].message.content)
         return Response.json({result: JSON.parse(response.choices[0].message.content ?? "{}")})
 
     }catch(error){
