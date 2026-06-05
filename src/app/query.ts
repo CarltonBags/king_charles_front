@@ -13,8 +13,12 @@ export async function submitPrefilter (userInput: string) {
 
     })
 
-    return Response.json(
-    { error: "Invalid userInput" },
-    { status: 400 }
-  );
+    if (!response.ok) {
+        throw new Error("API request failed");
+    }
+
+    const data = await response.json();
+
+    return data.result;
+
 }

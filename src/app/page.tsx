@@ -1,5 +1,6 @@
 "use client";
 
+import { submitPrefilter } from "./query";
 import { useState, useRef, useEffect, SubmitEventHandler } from "react";
 import {
   Send,
@@ -101,20 +102,13 @@ export default function Home() {
     e.preventDefault();
     if (!input.trim() || isTyping) return;
 
-    const userMessage: Message = {
-      id: `user-${Date.now()}`,
-      role: "user",
-      content: input.trim(),
-      timestamp: new Date(),
-    };
+    try{
+        const prefilter = await submitPrefilter(input.trim())
+        console.log("prefilter result:", prefilter)
+    }catch(e){
+      console.log("error prefiltering", e)
+    }
 
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-    setIsTyping(true);
-
-
-    setMessages((prev) => [...prev, ]);
-    setIsTyping(false);
   };
 
   return (
