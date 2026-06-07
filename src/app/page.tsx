@@ -219,7 +219,7 @@ export default function Home() {
       )}
       {showSplash && (
         <div className="absolute inset-0 flex items-center justify-center z-50" style={{ backgroundColor: "#020201" }}>
-          <img src="/images/DRINK GUIDE.png" alt="The Londoner Drink Guide" className="w-full max-w-md h-auto object-contain animate-pixel-in" style={{ imageRendering: "pixelated" }} />
+          <img src="/images/DRINK_GUIDE.png" alt="The Londoner Drink Guide" className="w-full max-w-md h-auto object-contain animate-pixel-in" style={{ imageRendering: "pixelated" }} />
         </div>
       )}
       <div className={`flex flex-col h-screen max-w-2xl mx-auto p-3 ${showSplash ? "opacity-0" : "opacity-100"}`}>
