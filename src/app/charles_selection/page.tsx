@@ -103,7 +103,7 @@ export default function CharlesSelectionPage() {
       <div className="w-full max-w-2xl mx-auto p-3">
         <div className="flex flex-col overflow-hidden" style={{ border: "2px solid #f0f0e0", boxShadow: "0 0 0 2px #020201, 0 0 0 4px #f0f0e0", backgroundColor: "#0d0d0f", minHeight: "100vh" }}>
           <header className="flex items-center justify-center" style={{ backgroundColor: "#020201" }}>
-            <img src="/images/header.png" alt="The Londoner Drink Guide" onClick={() => router.push("/")} className="w-full max-w-[180px] h-auto object-contain mx-auto cursor-pointer" style={{ imageRendering: "pixelated" }} />
+            <img src="/images/HEADER.png" alt="The Londoner Drink Guide" onClick={() => router.push("/")} className="w-full max-w-[180px] h-auto object-contain mx-auto cursor-pointer" style={{ imageRendering: "pixelated" }} />
           </header>
           <div className="pxl-divider w-full" />
           <div className="flex-1 p-4" style={{ backgroundColor: "#020201", display: "flex", flexDirection: "column", gap: "10px" }}>

@@ -225,7 +225,7 @@ export default function Home() {
       <div className={`flex flex-col h-screen max-w-2xl mx-auto p-3 ${showSplash ? "opacity-0" : "opacity-100"}`}>
         <div className="flex-1 flex flex-col overflow-hidden" style={{ border: "2px solid #f0f0e0", boxShadow: "0 0 0 2px #020201, 0 0 0 4px #f0f0e0", backgroundColor: "#0d0d0f" }}>
           <header className="flex items-center justify-center" style={{ backgroundColor: "#020201" }}>
-            <img src="/images/header.png" alt="The Londoner Drink Guide" className="w-full max-w-[180px] h-auto object-contain mx-auto" style={{ imageRendering: "pixelated" }} />
+            <img src="/images/HEADER.png" alt="The Londoner Drink Guide" className="w-full max-w-[180px] h-auto object-contain mx-auto" style={{ imageRendering: "pixelated" }} />
           </header>
           <div className="pxl-divider w-full" />
           <div className="flex-1 overflow-y-auto chat-scroll p-4" style={{ backgroundColor: "#020201" }}>
@@ -257,7 +257,7 @@ export default function Home() {
               </div>
               <button type="submit" disabled={!input.trim() || isLoadingDrinks}
                 className="flex items-center justify-center bg-transparent border-0 p-0">
-                <img src="/images/button.png" alt="Send" className="w-12 h-12 object-contain" style={{ imageRendering: "pixelated" }} />
+                <img src="/images/BUTTON.png" alt="Send" className="w-12 h-12 object-contain" style={{ imageRendering: "pixelated" }} />
               </button>
             </div>
           </form>
