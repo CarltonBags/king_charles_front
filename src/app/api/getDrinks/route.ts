@@ -37,8 +37,7 @@ console.log('negative_categories being sent:', parsed.negative)
     'match_drinks',
         {
             query_embedding: embeddingVec,
-            
-            semantic_query: parsed.semantic_query ?? null,
+            //semantic_query: parsed.semantic_query ?? null,
             drink_type: parsed.drink_type ?? null,
             is_alcoholic: parsed.is_alcoholic ?? null,
             max_abv: parsed.max_abv ?? null,

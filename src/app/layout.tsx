@@ -13,7 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen antialiased">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-screen">
         {children}
       </body>
     </html>

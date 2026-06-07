@@ -1,0 +1,58 @@
+{
+  "id": "pub_whisky_015",
+  "name": "Aberlour 12 Years Old",
+  "category": "whisky",
+  "subcategory": "speyside single malt",
+  "brand_or_producer": "Aberlour",
+  "abv": 48.0,
+  "taste_profile": {
+    "primary_notes": [
+      "citrus",
+      "sherry",
+      "oak",
+      "balanced",
+      "mellow"
+    ],
+    "sweetness": "medium",
+    "bitterness": "low",
+    "body": "medium-full",
+    "finish": "balanced, citrus, sherried",
+    "carbonation": "none",
+    "primary_notes_de": [
+      "Zitrus",
+      "Sherry",
+      "Eiche",
+      "ausgewogen",
+      "mild"
+    ]
+  },
+  "origin": "Speyside, Scotland",
+  "food_pairings": [
+    "Kettle Matured Cheddar Cheese & Red Onions",
+    "Tyrrell's Mature Cheddar & Chive",
+    "Kettle Intense Truffle and Sea Salt"
+  ],
+  "tags": [
+    "scotch",
+    "speyside",
+    "single malt",
+    "sherry cask",
+    "balanced"
+  ],
+  "notes": "Rich with a citrus character. Traditional Oak and seasoned Sherry butts are both used to great effect, as the mellowed spirits within are combined to deliver a subtly balanced flavour.",
+  "metadata": {
+    "source_page": 2,
+    "extraction_confidence": 0.9,
+    "verified_date": "2025-01-01"
+  },
+  "category_de": "Whisky",
+  "subcategory_de": "Speyside Single Malt",
+  "tags_de": [
+    "Scotch",
+    "Speyside",
+    "Single Malt",
+    "Sherryfass",
+    "ausgewogen"
+  ],
+  "notes_de": "Reichhaltig mit Zitruscharakter. Traditionelle Eichen- und abgelagerte Sherryfässer werden beide mit großer Wirkung eingesetzt, da die darin gereiften Spirituosen zu einem dezent ausgewogenen Geschmack vereint werden."
+}

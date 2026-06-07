@@ -1,0 +1,56 @@
+{
+  "id": "pub_special_001",
+  "name": "Liverpool Kiss",
+  "category": "special",
+  "subcategory": "beer cocktail",
+  "brand_or_producer": "House",
+  "abv": 4.0,
+  "taste_profile": {
+    "primary_notes": [
+      "stout",
+      "blackcurrant",
+      "sweet",
+      "rich",
+      "berry"
+    ],
+    "sweetness": "medium",
+    "bitterness": "low",
+    "body": "medium",
+    "finish": "sweet, roasty, berry",
+    "carbonation": "low",
+    "primary_notes_de": [
+      "Stout",
+      "Johannisbeere",
+      "süß",
+      "reichhaltig",
+      "Beere"
+    ]
+  },
+  "origin": "Pub Classic",
+  "food_pairings": [
+    "Kettle Sea Salt",
+    "Kettle Honey Barbeque",
+    "Kettle Sweet Chilli"
+  ],
+  "tags": [
+    "cocktail",
+    "guinness",
+    "blackcurrant",
+    "pub classic"
+  ],
+  "notes": "Guinness and blackcurrant. A classic British pub mix — rich stout softened by sweet blackcurrant.",
+  "metadata": {
+    "source_page": 36,
+    "extraction_confidence": 0.9,
+    "verified_date": "2025-01-01"
+  },
+  "category_de": "Spezialgetränk",
+  "subcategory_de": "Biermischgetränk",
+  "tags_de": [
+    "Cocktail",
+    "Guinness",
+    "Johannisbeere",
+    "Pub-Klassiker"
+  ],
+  "notes_de": "Guinness und Johannisbeere. Ein klassischer britischer Pub-Mix — reichhaltiges Stout, gemildert durch süße Johannisbeere."
+}

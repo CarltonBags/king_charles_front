@@ -1,0 +1,56 @@
+{
+  "id": "pub_special_004",
+  "name": "Black Velvet",
+  "category": "special",
+  "subcategory": "beer cocktail",
+  "brand_or_producer": "House",
+  "abv": 4.0,
+  "taste_profile": {
+    "primary_notes": [
+      "stout",
+      "apple",
+      "smooth",
+      "tart",
+      "balanced"
+    ],
+    "sweetness": "medium-low",
+    "bitterness": "low",
+    "body": "medium",
+    "finish": "smooth, tart, balanced",
+    "carbonation": "low",
+    "primary_notes_de": [
+      "Stout",
+      "Apfel",
+      "weich",
+      "herb",
+      "ausgewogen"
+    ]
+  },
+  "origin": "Pub Classic",
+  "food_pairings": [
+    "Kettle Sea Salt",
+    "Tyrrell's Sea Salt & Cider Vinegar",
+    "Kettle Matured Cheddar Cheese & Red Onions"
+  ],
+  "tags": [
+    "cocktail",
+    "guinness",
+    "cider",
+    "pub classic"
+  ],
+  "notes": "Guinness and Strongbow Cider. A classic British pub mix — stout and cider create a smooth, slightly tart combination.",
+  "metadata": {
+    "source_page": 36,
+    "extraction_confidence": 0.9,
+    "verified_date": "2025-01-01"
+  },
+  "category_de": "Spezialgetränk",
+  "subcategory_de": "Biermischgetränk",
+  "tags_de": [
+    "Cocktail",
+    "Guinness",
+    "Cidre",
+    "Pub-Klassiker"
+  ],
+  "notes_de": "Guinness und Strongbow Cidre. Ein klassischer britischer Pub-Mix — Stout und Cidre ergeben eine weiche, leicht herbe Kombination."
+}

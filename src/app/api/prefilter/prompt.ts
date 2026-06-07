@@ -25,6 +25,7 @@ Field descriptions:
   "beer"
   "gin"
   "whisky"
+  "cider"
   "spirit"
   "soft_drink"
   "special"

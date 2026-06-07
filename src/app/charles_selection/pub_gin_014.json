@@ -1,0 +1,58 @@
+{
+  "id": "pub_gin_014",
+  "name": "Monkey 47 Schwarzwald Dry Gin",
+  "category": "gin",
+  "subcategory": "dry gin",
+  "brand_or_producer": "Monkey 47",
+  "abv": 47.0,
+  "taste_profile": {
+    "primary_notes": [
+      "lingonberry",
+      "spice",
+      "floral",
+      "complex",
+      "botanical"
+    ],
+    "sweetness": "low",
+    "bitterness": "medium",
+    "body": "medium-full",
+    "finish": "complex, lingering, botanical",
+    "carbonation": "none",
+    "primary_notes_de": [
+      "Preiselbeere",
+      "Gewürz",
+      "blumig",
+      "komplex",
+      "botanisch"
+    ]
+  },
+  "origin": "Black Forest, Germany",
+  "food_pairings": [
+    "Kettle Matured Cheddar Cheese & Red Onions",
+    "Tyrrell's Mature Cheddar & Chive",
+    "Kettle Intense Truffle and Sea Salt"
+  ],
+  "tags": [
+    "gin",
+    "german",
+    "black forest",
+    "complex",
+    "botanical"
+  ],
+  "notes": "Distilled from 47 predominantly unusual but regional botanicals such as lingonberries, blended with natural spring water. A German gin uniting British traditions, Indian spices and the rich landscape of the Black Forest.",
+  "metadata": {
+    "source_page": 2,
+    "extraction_confidence": 0.9,
+    "verified_date": "2025-01-01"
+  },
+  "category_de": "Gin",
+  "subcategory_de": "Dry Gin",
+  "tags_de": [
+    "Gin",
+    "deutsch",
+    "Schwarzwald",
+    "komplex",
+    "botanisch"
+  ],
+  "notes_de": "Zugegeben, es erscheint etwas exzentrisch zu behaupten, dass ein deutsches Gin-Rezept die Kraft hat, große britische Traditionen, die Gewürze Indiens und die reiche Landschaft des Schwarzwalds zu vereinen. Und doch ist es genau diese Exzentrizität, die den rätselhaften und wagemutigen Charakter von Montgomery definiert. Destilliert aus 47 überwiegend ungewöhnlichen, aber regionalen Botanicals wie Preiselbeeren und vermischt mit natürlichem Quellwasser."
+}
