@@ -210,7 +210,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen w-full items-center justify-center relative" style={{ backgroundColor: "#020201" }}>
+    <div className="flex flex-col h-dvh w-full items-center justify-center relative" style={{ backgroundColor: "#020201" }}>
       {isLoadingDrinks && <LoadingOverlay />}
       {selectionSplash && (
         <div className="fixed inset-0 z-50 flex items-center justify-center animate-pixel-in" style={{ backgroundColor: "#020201" }}>
@@ -222,7 +222,7 @@ export default function Home() {
           <img src="/images/DRINK_GUIDE.png" alt="The Londoner Drink Guide" className="w-full max-w-md h-auto object-contain animate-pixel-in" style={{ imageRendering: "pixelated" }} />
         </div>
       )}
-      <div className={`flex flex-col h-screen max-w-2xl mx-auto p-3 ${showSplash ? "opacity-0" : "opacity-100"}`}>
+      <div className={`flex flex-col h-dvh max-w-2xl mx-auto p-3 ${showSplash ? "opacity-0" : "opacity-100"}`}>
         <div className="flex-1 flex flex-col overflow-hidden" style={{ border: "2px solid #f0f0e0", boxShadow: "0 0 0 2px #020201, 0 0 0 4px #f0f0e0", backgroundColor: "#0d0d0f" }}>
           <header className="flex items-center justify-center" style={{ backgroundColor: "#020201" }}>
             <img src="/images/HEADER.png" alt="The Londoner Drink Guide" className="w-full max-w-[180px] h-auto object-contain mx-auto" style={{ imageRendering: "pixelated" }} />

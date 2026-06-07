@@ -99,7 +99,7 @@ export default function CharlesSelectionPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen flex flex-col items-center" style={{ backgroundColor: "#020201" }}>
+    <div className="min-h-dvh flex flex-col items-center" style={{ backgroundColor: "#020201" }}>
       <div className="w-full max-w-2xl mx-auto p-3">
         <div className="flex flex-col overflow-hidden" style={{ border: "2px solid #f0f0e0", boxShadow: "0 0 0 2px #020201, 0 0 0 4px #f0f0e0", backgroundColor: "#0d0d0f", minHeight: "100vh" }}>
           <header className="flex items-center justify-center" style={{ backgroundColor: "#020201" }}>
