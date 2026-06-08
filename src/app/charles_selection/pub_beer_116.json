@@ -1,0 +1,58 @@
+{
+  "id": "pub_beer_116",
+  "name": "Harvey Imperial Extra Double Stout",
+  "category": "beer",
+  "subcategory": "imperial stout",
+  "brand_or_producer": "Harvey's",
+  "abv": 9.0,
+  "taste_profile": {
+    "primary_notes": [
+      "espresso",
+      "dark chocolate",
+      "caramel",
+      "roasted malt",
+      "intense"
+    ],
+    "sweetness": "medium",
+    "bitterness": "medium-high",
+    "body": "full",
+    "finish": "heavy, velvety",
+    "carbonation": "low",
+    "primary_notes_de": [
+      "Espresso",
+      "dunkle Schokolade",
+      "Karamell",
+      "Röstmalz",
+      "intensiv"
+    ]
+  },
+  "origin": "Lewes, England",
+  "food_pairings": [
+    "Kettle Intense Truffle and Sea Salt",
+    "Kettle Matured Cheddar Cheese & Red Onions",
+    "Taylors Haggis & Cracked Black Pepper"
+  ],
+  "tags": [
+    "imperial stout",
+    "bottle",
+    "english",
+    "room temp",
+    "intense"
+  ],
+  "notes": "Deep black stout served at room temperature. Rich roasted malt and dark chocolate aroma with espresso notes. Full bodied, intense with layers of coffee, dark chocolate and caramel. Heavy velvety finish.",
+  "metadata": {
+    "source_page": 19,
+    "extraction_confidence": 0.9,
+    "verified_date": "2025-01-01"
+  },
+  "category_de": "Bier",
+  "subcategory_de": "Imperial Stout",
+  "tags_de": [
+    "Imperial Stout",
+    "Flasche",
+    "englisch",
+    "Zimmertemperatur",
+    "intensiv"
+  ],
+  "notes_de": "Tiefschwarzes Stout, bei Zimmertemperatur serviert. Reichhaltiges Röstmalz- und dunkles Schokoladen-Aroma mit Espresso-Noten. Vollmundig und intensiv mit Schichten von Kaffee, dunkler Schokolade und Karamell. Schwerer, samtiger Abgang."
+}
