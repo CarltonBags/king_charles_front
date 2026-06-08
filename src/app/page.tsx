@@ -8,7 +8,7 @@ export default function LandingPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const t = setTimeout(() => setShowSplash(false), 2500);
+    const t = setTimeout(() => setShowSplash(false), 3000);
     return () => clearTimeout(t);
   }, []);
 
@@ -24,34 +24,38 @@ export default function LandingPage() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "24px", alignItems: "center", width: "100%", maxWidth: "320px" }}>
             {/* Drink Guide card */}
-            <button
-              onClick={() => router.push("/drink-guide")}
-              style={{
-                background: "none",
-                padding: "24px",
-                cursor: "pointer",
-                width: "100%",
-                border: "2px solid #f0f0e0",
-                boxShadow: "0 0 0 3px #020201, 0 0 0 5px #606068",
-              }}
-            >
-              <img src="/images/DRINK_GUIDE.png" alt="Drink Guide" style={{ width: "100%", maxWidth: "160px", display: "block", margin: "0 auto", imageRendering: "pixelated" }} />
-            </button>
+            <div className="animate-fade-in-up" style={{ width: "100%", animationDelay: "0.15s", opacity: 0 }}>
+              <button
+                onClick={() => router.push("/drink-guide")}
+                style={{
+                  background: "none",
+                  padding: "24px",
+                  cursor: "pointer",
+                  width: "100%",
+                  border: "2px solid #f0f0e0",
+                  boxShadow: "0 0 0 3px #020201, 0 0 0 5px #606068",
+                }}
+              >
+                <img src="/images/DRINK_GUIDE.png" alt="Drink Guide" style={{ width: "100%", maxWidth: "160px", display: "block", margin: "0 auto", imageRendering: "pixelated" }} />
+              </button>
+            </div>
 
             {/* Quiz card */}
-            <button
-              onClick={() => router.push("/quiz")}
-              style={{
-                background: "none",
-                padding: "24px",
-                cursor: "pointer",
-                width: "100%",
-                border: "2px solid #f0f0e0",
-                boxShadow: "0 0 0 3px #020201, 0 0 0 5px #606068",
-              }}
-            >
-              <img src="/images/QUIZ_CARD.png" alt="Pub Quiz" style={{ width: "100%", maxWidth: "160px", display: "block", margin: "0 auto", imageRendering: "pixelated" }} />
-            </button>
+            <div className="animate-fade-in-up" style={{ width: "100%", animationDelay: "0.35s", opacity: 0 }}>
+              <button
+                onClick={() => router.push("/quiz")}
+                style={{
+                  background: "none",
+                  padding: "24px",
+                  cursor: "pointer",
+                  width: "100%",
+                  border: "2px solid #f0f0e0",
+                  boxShadow: "0 0 0 3px #020201, 0 0 0 5px #606068",
+                }}
+              >
+                <img src="/images/QUIZ_CARD.png" alt="Pub Quiz" style={{ width: "100%", maxWidth: "160px", display: "block", margin: "0 auto", imageRendering: "pixelated" }} />
+              </button>
+            </div>
           </div>
         </div>
       )}

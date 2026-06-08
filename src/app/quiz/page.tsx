@@ -32,7 +32,7 @@ export default function QuizPage() {
     setLoading(false);
   };
 
-  useEffect(() => { const t = setTimeout(() => setShowSplash(false), 2500); return () => clearTimeout(t); }, []);
+  useEffect(() => { const t = setTimeout(() => setShowSplash(false), 3000); return () => clearTimeout(t); }, []);
 
   const startQuiz = async () => {
     await fetchQuestions();
