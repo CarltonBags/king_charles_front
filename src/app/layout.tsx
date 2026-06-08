@@ -21,6 +21,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
           rel="stylesheet"
         />
+        <link rel="preload" as="image" href="/images/PUB_VIEW.png" />
+        <link rel="preload" as="image" href="/images/DRINK_GUIDE_OPEN.png" />
+        <link rel="preload" as="image" href="/images/QUIZ_SPLASH.png" />
+        <link rel="preload" as="image" href="/images/SELECTION.png" />
+        <link rel="preload" as="image" href="/images/THINKING.png" />
       </head>
       <body className="min-h-dvh">
         {children}

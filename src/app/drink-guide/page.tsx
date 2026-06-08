@@ -173,11 +173,19 @@ export default function Home() {
   const [selectionSplash, setSelectionSplash] = useState(false);
   const router = useRouter();
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => { const t = setTimeout(() => setShowSplash(false), 2500); return () => clearTimeout(t); }, []);
   useEffect(() => { setMessages([{ id: "welcome-0", role: "assistant", content: welcomeMessage, timestamp: new Date() }]); }, []);
   useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: "instant" }); }, [messages]);
+
+  // Scroll to top when results arrive
+  useEffect(() => {
+    if (drinks.length > 0 && !isLoadingDrinks) {
+      messagesContainerRef.current?.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [drinks, isLoadingDrinks]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -221,7 +229,7 @@ export default function Home() {
             <img src="/images/HEADER.png" alt="The Londoner Drink Guide" onClick={() => router.push("/")} className="w-full max-w-[180px] h-auto object-contain mx-auto cursor-pointer" style={{ imageRendering: "pixelated" }} />
           </header>
           <div className="pxl-divider w-full" />
-          <div className="flex-1 overflow-y-auto chat-scroll p-4" style={{ backgroundColor: "#020201" }}>
+          <div ref={messagesContainerRef} className="flex-1 overflow-y-auto chat-scroll p-4" style={{ backgroundColor: "#020201" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {drinks.length === 0 && (
                 <>
