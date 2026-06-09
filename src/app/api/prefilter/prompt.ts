@@ -20,6 +20,11 @@ Field descriptions:
   Rewrite the customer's request into a concise semantic search query suitable for vector search.
   Include flavour preferences, style preferences, and drink characteristics.
 
+  IMPORTANT: If the user specifies a drink SUB-STYLE (e.g. "Stout", "IPA", "Single Malt", "London Dry Gin"),
+  you MUST repeat that sub-style name at least 3 times in the semantic query to ensure vector search ranking
+  prioritizes exact matches. For example, for "I want a stout": use "Stout beer dark stout roasted malt stout character".
+  For "single malt whisky": use "Single malt scotch whisky single malt speyside single malt character".
+
 - drink_type:
   One of:
   "beer"
@@ -34,6 +39,8 @@ Field descriptions:
 
   If the customer does not specify a drink type, return null.
   Only use the "special" type if the user does request something special without naming one of the other drink_type in the request.
+
+  CRITICAL: If a user requests a specific beer STYLE (e.g. "Stout", "Ale", "Lager", "IPA", "Pilsner", "Porter", "Weizen", "Helles", "Kölsch", "Altbier"), still set drink_type to "beer" — but you MUST repeat the style name 3-4 times in the semantic_query to dominate the vector ranking. This applies to all drink sub-types (e.g. "Single Malt" for whisky, "London Dry" for gin).
 
 - is_alcoholic:
   true unless the customer explicitly requests a non-alcoholic drink.

@@ -87,7 +87,7 @@ function DrinkCard({ drink, rank }: { drink: DrinkResult; rank: number }) {
       onClick={() => setExpanded(!expanded)}
       style={{
         padding: "10px",
-        border: "2px solid #f0f0e0",
+        border: isTop ? "2px solid #e8b830" : "2px solid #f0f0e0",
         backgroundColor: "#0d0d0f",
         transition: "all 0.3s ease",
         transform: expanded ? "scale(1.02)" : "scale(1)",
