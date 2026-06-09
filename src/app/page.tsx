@@ -61,8 +61,8 @@ export default function LandingPage() {
         </div>
       )}
 
-      <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, textAlign: "center", padding: "8px", fontFamily: "'Jersey 10', monospace", fontSize: "12px", color: "#606068" }}>
-        built with thirst by <a href="https://zerolab.de" target="_blank" style={{ color: "#808090", textDecoration: "none" }}>zerolab.de</a>
+      <div style={{ position: "sticky", bottom: 0, textAlign: "center", padding: "6px 0", backgroundColor: "#020201", marginTop: "auto", fontFamily: "'Jersey 10', monospace", fontSize: "12px", color: "#606068" }}>
+        built with thirst by <a href="https://byzerolab.de" target="_blank" style={{ color: "#f5d060", textDecoration: "none" }}>byzerolab.de</a>
       </div>
     </div>
   );
