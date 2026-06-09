@@ -21,7 +21,7 @@ export default function QuizPage() {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
-  const [timer, setTimer] = useState(7);
+  const [timer, setTimer] = useState(8);
   const [loading, setLoading] = useState(false);
 
   const fetchQuestions = async () => {
@@ -39,7 +39,7 @@ export default function QuizPage() {
     setPhase("playing");
     setCurrent(0);
     setScore(0);
-    setTimer(7);
+    setTimer(8);
     setSelected(null);
   };
 
@@ -49,7 +49,7 @@ export default function QuizPage() {
     } else {
       setCurrent((c) => c + 1);
       setSelected(null);
-      setTimer(7);
+      setTimer(8);
     }
   }, [current, questions.length]);
 
@@ -116,7 +116,7 @@ export default function QuizPage() {
 
             {/* Timer bar */}
             <div style={{ height: "6px", backgroundColor: "#151518", border: "1px solid #606068" }}>
-              <div style={{ height: "100%", width: `${Math.max(0, ((timer - 1) / 6)) * 100}%`, backgroundColor: timer <= 2 ? "#e04040" : "#5cc8d0" }} />
+              <div style={{ height: "100%", width: `${Math.max(0, ((timer - 1) / 7)) * 100}%`, backgroundColor: timer <= 2 ? "#e04040" : "#5cc8d0" }} />
             </div>
 
             {/* Question */}
@@ -175,6 +175,10 @@ export default function QuizPage() {
             </button>
           </div>
         )}
+      </div>
+
+      <div style={{ textAlign: "center", padding: "6px 0", backgroundColor: "#020201", fontFamily: "'Jersey 10', monospace", fontSize: "12px", color: "#606068" }}>
+        built with thirst by <a href="https://byzerolab.de" target="_blank" style={{ color: "#f5d060", textDecoration: "none" }}>byzerolab.de</a>
       </div>
     </div>
   );

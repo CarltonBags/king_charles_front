@@ -274,6 +274,10 @@ export default function Home() {
           </form>
         </div>
       </div>
+
+      <div style={{ textAlign: "center", padding: "6px 0", fontFamily: "'Jersey 10', monospace", fontSize: "10px", color: "#606068", backgroundColor: "#020201" }}>
+        built with thirst by <a href="https://byzerolab.de" target="_blank" style={{ color: "#f5d060", textDecoration: "none" }}>byzerolab.de</a>
+      </div>
     </div>
   );
 }
