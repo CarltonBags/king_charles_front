@@ -98,6 +98,7 @@ Field descriptions:
 
   Include only flavors that are mentioned or clearly implied by the user's request.
   If no flavor preferences are expressed, return an empty array.
+  If someone describes a special type of beer, for example "Stout", "Ale", "Lager", include that in your semantic query, not just return "beer". THis is analog for all other drinks as well.
 
 Rules:
 
