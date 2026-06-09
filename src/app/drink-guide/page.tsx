@@ -178,14 +178,20 @@ export default function Home() {
 
   useEffect(() => { const t = setTimeout(() => setShowSplash(false), 3000); return () => clearTimeout(t); }, []);
   useEffect(() => { setMessages([{ id: "welcome-0", role: "assistant", content: welcomeMessage, timestamp: new Date() }]); }, []);
-  useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: "instant" }); }, [messages]);
 
-  // Scroll to top when results arrive
+  // Scroll to top on mount and when results arrive
+  useEffect(() => {
+    messagesContainerRef.current?.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
+
   useEffect(() => {
     if (drinks.length > 0 && !isLoadingDrinks) {
       messagesContainerRef.current?.scrollTo({ top: 0, behavior: "instant" });
+    } else if (drinks.length === 0 && messages.length > 1) {
+      // Scroll to bottom only when new user messages arrive (not welcome)
+      messagesEndRef.current?.scrollIntoView({ behavior: "instant" });
     }
-  }, [drinks, isLoadingDrinks]);
+  }, [drinks, isLoadingDrinks, messages.length]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -229,7 +235,7 @@ export default function Home() {
             <img src="/images/HEADER.png" alt="The Londoner Drink Guide" onClick={() => router.push("/")} className="w-full max-w-[180px] h-auto object-contain mx-auto cursor-pointer" style={{ imageRendering: "pixelated" }} />
           </header>
           <div className="pxl-divider w-full" />
-          <div ref={messagesContainerRef} className="flex-1 overflow-y-auto chat-scroll p-4" style={{ backgroundColor: "#020201" }}>
+          <div ref={messagesContainerRef} className="flex-1 overflow-y-auto chat-scroll p-4" style={{ backgroundColor: "#020201", minHeight: 0 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {drinks.length === 0 && (
                 <>
@@ -238,7 +244,7 @@ export default function Home() {
                   <div className="flex justify-center animate-fade-in-up">
                     <button type="button" onClick={() => { setSelectionSplash(true); setTimeout(() => router.push("/charles_selection"), 1000); }}
                       className="bg-transparent border-0 p-0 cursor-pointer">
-                      <img src="/images/SIGN.png" alt="Charles' Selection" className="w-full max-w-[240px] h-auto object-contain" style={{ imageRendering: "pixelated" }} />
+                      <img src="/images/SIGN.png" alt="Charles' Selection" className="w-full max-w-[180px] h-auto object-contain" style={{ imageRendering: "pixelated" }} />
                     </button>
                   </div>
                 </>

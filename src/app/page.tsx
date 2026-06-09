@@ -56,6 +56,7 @@ export default function LandingPage() {
                 <img src="/images/QUIZ_CARD.png" alt="Pub Quiz" style={{ width: "100%", maxWidth: "160px", display: "block", margin: "0 auto", imageRendering: "pixelated" }} />
               </button>
             </div>
+
           </div>
         </div>
       )}

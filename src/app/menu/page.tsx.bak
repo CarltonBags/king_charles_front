@@ -1,0 +1,166 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+interface Drink {
+  id: string;
+  name: string;
+  abv: number;
+  category: string;
+  category_de: string;
+  subcategory: string;
+  subcategory_de: string;
+  origin: string;
+  notes_de: string;
+  brand_or_producer: string;
+}
+
+export default function MenuPage() {
+  const router = useRouter();
+  const [drinks, setDrinks] = useState<Drink[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => { const t = setTimeout(() => setShowSplash(false), 3000); return () => clearTimeout(t); }, []);
+
+  useEffect(() => {
+    fetch("/api/menu")
+      .then((r) => r.json())
+      .then((data) => {
+        const raw = data.drinks || [];
+        // Normalize: some data might have a metadata wrapper
+        const normalized = raw.map((d: any) => {
+          const inner = d.metadata || d;
+          return {
+            id: inner.id || d.id,
+            name: inner.name || "",
+            abv: inner.abv ?? 0,
+            category: inner.category || "",
+            category_de: inner.category_de || inner.category || "Andere",
+            subcategory: inner.subcategory || "",
+            subcategory_de: inner.subcategory_de || inner.subcategory || "",
+            origin: inner.origin || "",
+            notes_de: inner.notes_de || "",
+            brand_or_producer: inner.brand_or_producer || "",
+          };
+        });
+        setDrinks(normalized);
+        setLoading(false);
+      });
+  }, []);
+
+  // Group by category_de
+  const categories = new Map<string, Drink[]>();
+  drinks.forEach((d) => {
+    const cat = d.category_de || d.category || "Andere";
+    if (!categories.has(cat)) categories.set(cat, []);
+    categories.get(cat)!.push(d);
+  });
+
+  // Sub-group beer by subcategory
+  const subGroupBeer = (beers: Drink[]) => {
+    const subs = new Map<string, Drink[]>();
+    beers.forEach((b) => {
+      const sub = b.subcategory_de || b.subcategory || "Andere";
+      if (!subs.has(sub)) subs.set(sub, []);
+      subs.get(sub)!.push(b);
+    });
+    return subs;
+  };
+
+  const catNames = Array.from(categories.keys()).sort();
+  const filtered = activeCategory
+    ? new Map([[activeCategory, categories.get(activeCategory)!]])
+    : categories;
+
+  return (
+    <div style={{ minHeight: "100dvh", backgroundColor: "#020201", color: "#f0f0e0", fontFamily: "'Jersey 10', monospace", padding: "16px", position: "relative" }}>
+      {showSplash && (
+        <div className="absolute inset-0 flex items-center justify-center z-50" style={{ backgroundColor: "#020201" }}>
+          <img src="/images/DRINK_GUIDE_OPEN.png" alt="Menu" className="w-full max-w-md h-auto object-contain animate-pixel-in" style={{ imageRendering: "pixelated" }} />
+        </div>
+      )}
+
+      <div style={{ maxWidth: "600px", margin: "0 auto", opacity: showSplash ? 0 : 1 }}>
+        <img src="/images/HEADER.png" alt="The Londoner" onClick={() => router.push("/")} style={{ maxWidth: "140px", display: "block", margin: "0 auto 16px", imageRendering: "pixelated", cursor: "pointer" }} />
+
+        <p style={{ fontSize: "24px", color: "#f5d060", textAlign: "center", marginBottom: "16px" }}>FULL MENU</p>
+
+        {/* Filter buttons */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "center", marginBottom: "20px" }}>
+          <button
+            onClick={() => setActiveCategory(null)}
+            style={{
+              fontFamily: "'Jersey 10', monospace", fontSize: "14px",
+              padding: "4px 12px", backgroundColor: activeCategory === null ? "#e8b830" : "#0d0d0f",
+              color: activeCategory === null ? "#020201" : "#808090",
+              border: "1px solid #606068", cursor: "pointer",
+            }}
+          >
+            ALLE
+          </button>
+          {catNames.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
+              style={{
+                fontFamily: "'Jersey 10', monospace", fontSize: "14px",
+                padding: "4px 12px", backgroundColor: activeCategory === cat ? "#e8b830" : "#0d0d0f",
+                color: activeCategory === cat ? "#020201" : "#808090",
+                border: "1px solid #606068", cursor: "pointer",
+              }}
+            >
+              {cat.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        {loading ? (
+          <p style={{ textAlign: "center", color: "#808090", fontSize: "18px" }}>LADE...</p>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px", paddingBottom: "40px" }}>
+            {Array.from(filtered.entries()).map(([cat, items]) => {
+              const isBeer = cat.toLowerCase().includes("bier") || cat.toLowerCase().includes("beer");
+              return (
+                <div key={cat}>
+                  <h2 style={{ fontSize: "20px", color: "#f5d060", borderBottom: "1px solid #606068", paddingBottom: "4px", marginBottom: "10px" }}>
+                    {cat.toUpperCase()} ({items.length})
+                  </h2>
+
+                  {isBeer ? (
+                    // Beer: sub-grouped
+                    Array.from(subGroupBeer(items).entries()).map(([sub, subItems]) => (
+                      <div key={sub} style={{ marginBottom: "12px", marginLeft: "12px" }}>
+                        <h3 style={{ fontSize: "16px", color: "#5cc8d0", marginBottom: "6px" }}>{sub}</h3>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                          {subItems.map((d) => (
+                            <div key={d.id} style={{ display: "flex", justifyContent: "space-between", fontSize: "16px", padding: "2px 0", borderBottom: "1px solid #1a1a1a" }}>
+                              <span style={{ color: "#f0f0e0" }}>{d.name}</span>
+                              <span style={{ color: "#808090" }}>{d.abv}%</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    // Other categories: flat list
+                    <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginLeft: "12px" }}>
+                      {items.map((d) => (
+                        <div key={d.id} style={{ display: "flex", justifyContent: "space-between", fontSize: "16px", padding: "2px 0", borderBottom: "1px solid #1a1a1a" }}>
+                          <span style={{ color: "#f0f0e0" }}>{d.name}</span>
+                          <span style={{ color: "#808090" }}>{d.abv}%</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
